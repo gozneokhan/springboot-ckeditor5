@@ -6,6 +6,8 @@ import com.example.demo.repository.ContentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ContentService {
 
@@ -30,5 +32,10 @@ public class ContentService {
         contentRepository.save(contentEntity);
 
         return;
+    }
+
+    public List<ContentEntity> slectContent() {
+
+        return contentRepository.findAll();
     }
 }
