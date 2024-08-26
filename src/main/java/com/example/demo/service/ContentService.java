@@ -38,4 +38,11 @@ public class ContentService {
 
         return contentRepository.findAll();
     }
+
+    public ContentEntity selectOneContent(String id) {
+
+        int to = Integer.parseInt(id);
+
+        return contentRepository.findById(to);
+    }
 }
