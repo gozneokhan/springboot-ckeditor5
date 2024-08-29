@@ -20,7 +20,7 @@ public class ListController {
     @GetMapping("/list")
     public String listPage(Model model) {
 
-        model.addAttribute("ContentList", contentService.slectContent());
+        model.addAttribute("ContentList", contentService.selectContent());
 
         return "list";
     }

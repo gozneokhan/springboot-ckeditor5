@@ -34,7 +34,7 @@ public class ContentService {
         return;
     }
 
-    public List<ContentEntity> slectContent() {
+    public List<ContentEntity> selectContent() {
 
         return contentRepository.findAll();
     }
@@ -52,5 +52,18 @@ public class ContentService {
 
         contentRepository.deleteById(to);
 
+    }
+
+    public void updateOneContent(SaveDTO saveDTO, String id) {
+
+        int to = Integer.parseInt(id);
+
+        ContentEntity contentEntity = new ContentEntity();
+
+        contentEntity.setId(to);
+        contentEntity.setTitle(saveDTO.getTitle());
+        contentEntity.setContent(saveDTO.getContent());
+
+        contentRepository.save(contentEntity);
     }
 }
